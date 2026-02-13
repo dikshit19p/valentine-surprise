@@ -3,103 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Our First Valentine ❤️</title>
+
+<title>For My Love ❤️</title>
 
 <style>
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
 body{
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg,#ff416c,#ff4b2b);
+    margin:0;
+    font-family:'Segoe UI', sans-serif;
+    background: linear-gradient(135deg,#ff4e50,#b31217);
     color:white;
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    padding:20px;
-}
-
-/* Main Card */
-
-.container{
-    width:100%;
-    max-width:500px;
-    background:rgba(255,255,255,0.1);
-    backdrop-filter:blur(15px);
-    border-radius:25px;
-    padding:30px 25px;
     text-align:center;
-    box-shadow:0 15px 40px rgba(0,0,0,0.3);
-    animation:fadeIn 1.5s ease;
-}
-
-@keyframes fadeIn{
-    from{opacity:0; transform:translateY(30px);}
-    to{opacity:1; transform:translateY(0);}
-}
-
-h1{
-    font-size:1.8rem;
-    margin-bottom:15px;
-}
-
-p{
-    font-size:1rem;
-    line-height:1.6;
-    margin-bottom:20px;
-}
-
-button{
-    width:100%;
-    padding:14px;
-    border:none;
-    border-radius:12px;
-    font-size:16px;
-    cursor:pointer;
-    margin-top:10px;
-    transition:0.3s ease;
-}
-
-.primary{
-    background:white;
-    color:#ff416c;
-}
-
-.primary:hover{
-    transform:scale(1.05);
-}
-
-.secondary{
-    background:#ff0055;
-    color:white;
-}
-
-.secondary:hover{
-    transform:scale(1.05);
-}
-
-.hidden{
-    display:none;
-}
-
-/* Gallery */
-
-.gallery{
-    margin-top:20px;
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:10px;
-}
-
-.gallery img{
-    width:100%;
-    border-radius:15px;
-    object-fit:cover;
+    overflow-x:hidden;
 }
 
 /* Floating Hearts */
@@ -107,21 +22,49 @@ button{
 .heart{
     position:fixed;
     bottom:-20px;
-    color:white;
-    animation:float 5s linear infinite;
+    font-size:20px;
+    animation:float 6s linear infinite;
 }
 
 @keyframes float{
-    to{
-        transform:translateY(-110vh);
-        opacity:0;
-    }
+    0%{transform:translateY(0);}
+    100%{transform:translateY(-100vh);}
 }
 
-#proposal{
-    margin-top:20px;
-    font-size:1.3rem;
-    font-weight:bold;
+.container{
+    max-width:700px;
+    margin:auto;
+    padding:30px;
+}
+
+button{
+    padding:14px 28px;
+    font-size:18px;
+    border:none;
+    border-radius:12px;
+    background:#ff1493;
+    color:white;
+    cursor:pointer;
+    margin-top:15px;
+    transition:.3s;
+}
+
+button:hover{
+    transform:scale(1.08);
+}
+
+.gallery img{
+    width:250px;
+    border-radius:20px;
+    margin:10px;
+    box-shadow:0 10px 25px rgba(0,0,0,.4);
+}
+
+.love-letter{
+    background:rgba(255,255,255,.1);
+    padding:20px;
+    border-radius:20px;
+    margin-top:25px;
 }
 
 </style>
@@ -133,102 +76,112 @@ button{
 
 <h1>Happy First Valentine's Day, Prakalya ❤️</h1>
 
-<h2 style="margin-top:40px;">Reasons I Fell For You 💌</h2>
+<h3 id="typing"></h3>
 
-<div style="text-align:left; max-width:600px; margin:auto; font-size:18px; line-height:1.8;">
-  ❤️ The way you smile when you're happy  
-  <br>❤️ The way you care about the smallest things  
-  <br>❤️ The way you make my bad days better  
-  <br>❤️ Your laugh — my favorite sound  
-  <br>❤️ The peace I feel when I’m with you  
-  <br>❤️ And most of all… the way you love me
+<button onclick="showLetter()">Open My Heart 💌</button>
+
+<div id="letter" class="love-letter" style="display:none;">
+    From the moment you entered my life, everything became softer,
+    brighter, and happier.
+
+    You are my favorite person, my safe place,
+    my best decision.
+
+    This is our first Valentine…
+    but I know it’s the first of forever. ❤️
 </div>
 
-<h2 style="margin-top:40px;">Our Story 🌹</h2>
+<!-- Reasons -->
 
-<div style="max-width:600px; margin:auto; text-align:left;">
-  <p>✨ The day we first talked — I didn’t know you would become my everything.</p>
-  <p>✨ The moment I realized I love you — my world changed.</p>
-  <p>✨ Today — our first Valentine’s together.</p>
-  <p>✨ Forever — with you. ❤️</p>
-</div>
-   
-<p>
-This is our very first Valentine together…  
-and I promise it's just the beginning of something beautiful.
-</p>
+<h2 style="margin-top:50px;">Reasons I Fell For You 💖</h2>
 
-<button class="primary" onclick="showLetter()">Open My Heart 💌</button>
-
-<div id="letter" class="hidden">
-<p>
-From the moment you entered my life,
-everything became softer, brighter, and happier.
-
-You are my favorite person,
-my safe place,
-my best decision.
-
-This is our first Valentine,
-but I hope it's the first of forever.
-</p>
-
-<button class="secondary" onclick="showGallery()">Photos 📸</button>
+<div style="text-align:left; line-height:1.8;">
+❤️ The way you smile when you're happy  
+<br>❤️ Your laugh — my favorite sound  
+<br>❤️ How you understand me without words  
+<br>❤️ The peace I feel with you  
+<br>❤️ You make ordinary moments magical  
+<br>❤️ And most of all… the way you love me
 </div>
 
-<div id="gallerySection" class="hidden">
+
+<!-- Timeline -->
+
+<h2 style="margin-top:50px;">Our Story 🌹</h2>
+
+<p>✨ The day we first talked — I didn’t know you would become my everything.</p>
+<p>✨ The moment I realized I love you — my world changed.</p>
+<p>✨ Today — our first Valentine’s together.</p>
+<p>✨ Forever — with you. ❤️</p>
+
+
+<!-- Photos -->
+
+<h2 style="margin-top:50px;">Our Beautiful Memories 📸</h2>
 
 <div class="gallery">
-<!-- Replace with your real images -->
-<img src="P.jpeg">
-<img src="D.jpeg">
+<img src="photo1.jpg">
+<img src="photo2.jpg">
 </div>
 
-<button class="primary" onclick="showProposal()">One More Thing ❤️</button>
 
-</div>
+<!-- Proposal -->
 
-<h2 style="margin-top:40px;">One Question For You 💍</h2>
+<h2 style="margin-top:50px;">One Question For You 💍</h2>
 
 <h3>Will you be mine forever?</h3>
 
-<button onclick="alert('You just made me the happiest person alive ❤️')"
-style="padding:12px 25px; font-size:18px; background:#ff1493; color:white; border:none; border-radius:10px; margin:10px;">
-YES 💖
-</button>
-
+<button onclick="yesClicked()">YES ❤️</button>
 
 </div>
 
+
 <script>
 
-/* Reveal Letter */
+// Typing Effect
+
+let msg = "This is our very first Valentine together... and I promise it's just the beginning of something beautiful.";
+let i = 0;
+
+function type(){
+    if(i < msg.length){
+        document.getElementById("typing").innerHTML += msg.charAt(i);
+        i++;
+        setTimeout(type,40);
+    }
+}
+
+type();
+
+
+// Love Letter
+
 function showLetter(){
-    document.getElementById("letter").classList.remove("hidden");
+    document.getElementById("letter").style.display="block";
 }
 
-/* Show Gallery */
-function showGallery(){
-    document.getElementById("gallerySection").classList.remove("hidden");
+
+// Proposal Click
+
+function yesClicked(){
+    alert("You just made me the happiest person alive ❤️");
 }
 
-/* Proposal */
-function showProposal(){
-    document.getElementById("proposal").classList.remove("hidden");
-}
 
-/* Floating Hearts */
+// Floating Hearts
+
 function createHeart(){
-    const heart=document.createElement("div");
-    heart.classList.add("heart");
+    let heart = document.createElement("div");
+    heart.className="heart";
     heart.innerHTML="❤️";
     heart.style.left=Math.random()*100+"vw";
-    heart.style.fontSize=Math.random()*20+10+"px";
+    heart.style.fontSize=(Math.random()*20+10)+"px";
     document.body.appendChild(heart);
-    setTimeout(()=>heart.remove(),5000);
+
+    setTimeout(()=>heart.remove(),6000);
 }
 
-setInterval(createHeart,400);
+setInterval(createHeart,500);
 
 </script>
 
