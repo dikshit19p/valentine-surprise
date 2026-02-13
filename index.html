@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our First Valentine ❤️</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg,#ff416c,#ff4b2b);
+    color:white;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+}
+
+/* Main Card */
+
+.container{
+    width:100%;
+    max-width:500px;
+    background:rgba(255,255,255,0.1);
+    backdrop-filter:blur(15px);
+    border-radius:25px;
+    padding:30px 25px;
+    text-align:center;
+    box-shadow:0 15px 40px rgba(0,0,0,0.3);
+    animation:fadeIn 1.5s ease;
+}
+
+@keyframes fadeIn{
+    from{opacity:0; transform:translateY(30px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+h1{
+    font-size:1.8rem;
+    margin-bottom:15px;
+}
+
+p{
+    font-size:1rem;
+    line-height:1.6;
+    margin-bottom:20px;
+}
+
+button{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:12px;
+    font-size:16px;
+    cursor:pointer;
+    margin-top:10px;
+    transition:0.3s ease;
+}
+
+.primary{
+    background:white;
+    color:#ff416c;
+}
+
+.primary:hover{
+    transform:scale(1.05);
+}
+
+.secondary{
+    background:#ff0055;
+    color:white;
+}
+
+.secondary:hover{
+    transform:scale(1.05);
+}
+
+.hidden{
+    display:none;
+}
+
+/* Gallery */
+
+.gallery{
+    margin-top:20px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+}
+
+.gallery img{
+    width:100%;
+    border-radius:15px;
+    object-fit:cover;
+}
+
+/* Floating Hearts */
+
+.heart{
+    position:fixed;
+    bottom:-20px;
+    color:white;
+    animation:float 5s linear infinite;
+}
+
+@keyframes float{
+    to{
+        transform:translateY(-110vh);
+        opacity:0;
+    }
+}
+
+#proposal{
+    margin-top:20px;
+    font-size:1.3rem;
+    font-weight:bold;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Happy First Valentine's Day, Prakalya ❤️</h1>
+
+<p>
+This is our very first Valentine together…  
+and I promise it's just the beginning of something beautiful.
+</p>
+
+<button class="primary" onclick="showLetter()">Open My Heart 💌</button>
+
+<div id="letter" class="hidden">
+<p>
+From the moment you entered my life,
+everything became softer, brighter, and happier.
+
+You are my favorite person,
+my safe place,
+my best decision.
+
+This is our first Valentine,
+but I hope it's the first of forever.
+</p>
+
+<button class="secondary" onclick="showGallery()">Photos 📸</button>
+</div>
+
+<div id="gallerySection" class="hidden">
+
+<div class="gallery">
+<!-- Replace with your real images -->
+<img src="c:\Users\USER\Desktop\New folder (2)\P.jpeg">
+<img src="c:\Users\USER\Desktop\New folder (2)\D.jpeg">
+</div>
+
+<button class="primary" onclick="showProposal()">One More Thing ❤️</button>
+
+</div>
+
+<div id="proposal" class="hidden">
+Will you be my Valentine forever? 💍❤️
+</div>
+
+</div>
+
+<script>
+
+/* Reveal Letter */
+function showLetter(){
+    document.getElementById("letter").classList.remove("hidden");
+}
+
+/* Show Gallery */
+function showGallery(){
+    document.getElementById("gallerySection").classList.remove("hidden");
+}
+
+/* Proposal */
+function showProposal(){
+    document.getElementById("proposal").classList.remove("hidden");
+}
+
+/* Floating Hearts */
+function createHeart(){
+    const heart=document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML="❤️";
+    heart.style.left=Math.random()*100+"vw";
+    heart.style.fontSize=Math.random()*20+10+"px";
+    document.body.appendChild(heart);
+    setTimeout(()=>heart.remove(),5000);
+}
+
+setInterval(createHeart,400);
+
+</script>
+
+</body>
+</html>
