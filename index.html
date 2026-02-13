@@ -17,8 +17,6 @@ body{
     overflow-x:hidden;
 }
 
-/* Floating Hearts */
-
 .heart{
     position:fixed;
     bottom:-20px;
@@ -81,17 +79,16 @@ button:hover{
 <button onclick="showLetter()">Open My Heart 💌</button>
 
 <div id="letter" class="love-letter" style="display:none;">
-    From the moment you entered my life, everything became softer,
-    brighter, and happier.
+From the moment you entered my life, everything became softer,
+brighter, and happier.
 
-    You are my favorite person, my safe place,
-    my best decision.
+You are my favorite person, my safe place,
+my best decision.
 
-    This is our first Valentine…
-    but I know it’s the first of forever. ❤️
+This is our first Valentine…
+but I know it’s the first of forever. ❤️
 </div>
 
-<!-- Reasons -->
 
 <h2 style="margin-top:50px;">Reasons I Fell For You 💖</h2>
 
@@ -105,8 +102,6 @@ button:hover{
 </div>
 
 
-<!-- Timeline -->
-
 <h2 style="margin-top:50px;">Our Story 🌹</h2>
 
 <p>✨ The day we first talked — I didn’t know you would become my everything.</p>
@@ -115,9 +110,7 @@ button:hover{
 <p>✨ Forever — with you. ❤️</p>
 
 
-<!-- Photos -->
-
-<h2 style="margin-top:50px;">Our Beautiful Memories 📸</h2>
+<h2 style="margin-top:50px;"> Photos 📸</h2>
 
 <div class="gallery">
 <img src="P.jpeg">
@@ -125,13 +118,17 @@ button:hover{
 </div>
 
 
-<!-- Proposal -->
-
 <h2 style="margin-top:50px;">One Question For You 💍</h2>
 
 <h3>Will you be mine forever?</h3>
 
 <button onclick="yesClicked()">YES ❤️</button>
+
+<button 
+onmouseover="moveButton(this)" 
+style="background:black;">
+NO 😅
+</button>
 
 </div>
 
@@ -139,7 +136,6 @@ button:hover{
 <script>
 
 // Typing Effect
-
 let msg = "This is our very first Valentine together... and I promise it's just the beginning of something beautiful.";
 let i = 0;
 
@@ -150,26 +146,30 @@ function type(){
         setTimeout(type,40);
     }
 }
-
 type();
 
 
 // Love Letter
-
 function showLetter(){
     document.getElementById("letter").style.display="block";
 }
 
 
-// Proposal Click
-
+// YES Click
 function yesClicked(){
     alert("You just made me the happiest person alive ❤️");
 }
 
 
-// Floating Hearts
+// RUNNING NO BUTTON 😄
+function moveButton(btn){
+    btn.style.position="absolute";
+    btn.style.top=Math.random()*80+"vh";
+    btn.style.left=Math.random()*80+"vw";
+}
 
+
+// Floating Hearts
 function createHeart(){
     let heart = document.createElement("div");
     heart.className="heart";
